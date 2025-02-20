@@ -1,4 +1,5 @@
 ﻿; https://superuser.com/a/1880043/1268619
+#Requires AutoHotkey v2.0
 #SingleInstance Force
 
 ; Item in list polyfill, what is this language
