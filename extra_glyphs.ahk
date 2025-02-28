@@ -72,6 +72,9 @@
 :?*:c`:::ç
 :?*:C`:::Ç
 
+; Spanish n
+:?*:n~::ñ
+:?*:N~::Ñ
 
 ; Combined characters
 :?*:oe)::œ
