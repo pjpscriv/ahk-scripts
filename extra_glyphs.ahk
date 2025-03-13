@@ -41,19 +41,8 @@
 :?*:U^::Û
 
 ; Diaeresis
-:?*:a;::ä
-:?*:e;::ë
-:?*:i;::ï
-:?*:o;::ö
-:?*:u;::ü
-:?*:y;::ÿ
-
-:?*:A;::Ä
-:?*:E;::Ë
-:?*:I;::Ï
-:?*:O;::Ö
-:?*:U;::Ü
-:?*:Y;::Ÿ
+; You can't see it, but there's a invisible combining diaeresis here - https://symbl.cc/en/0308/
+^;::Send "̈" 
 
 ; Macrons
 :?*:a|::ā
