@@ -21,7 +21,7 @@ Then create a batch file e.g. `ahk_scripts.bat` in this folder, with content som
 
 ```batch
 @echo off
-echo Running autohotkey scripts on startu
+echo Running autohotkey scripts on startup
 
 powerShell "C:\<PATH_TO_AHK_SCRIPTS>\ahk-scripts\extra_glyphs.ahk"
 powerShell "C:\<PATH_TO_AHK_SCRIPTS>\ahk-scripts\new_txt_file_laptop.ahk"
