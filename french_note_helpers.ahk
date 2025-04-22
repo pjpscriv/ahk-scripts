@@ -24,3 +24,6 @@
     Sleep 100
     SendText "ils/elles ___ **ant**"
 }
+
+; Common words
+::etre::être
