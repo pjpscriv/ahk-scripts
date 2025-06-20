@@ -9,6 +9,6 @@
 
 :*:linkedindecline:: {
     SendText "Hey, thanks for the connection request, just replying to say I won't accept it "
-           . "as I have a policy of only adding people I know IRL or I'm am working on a project with.`n"
+           . "as I have a policy of only adding people I know IRL or I'm working with on a project.`n"
            . "Cheers :)"
 }
