@@ -27,6 +27,10 @@
 :?*:O\::Ò
 :?*:U\::Ù
 
+; Accent / Grave escaping
+^/::Send "{Raw}/"
+^\::Send "{Raw}\"
+
 ; Circumflexes
 :?*:a^::â
 :?*:e^::ê
