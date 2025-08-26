@@ -78,3 +78,7 @@
 ; Quote marks - Guillemets
 :?*:<<::«
 :?*:>>::»
+
+; Arrows - Flèches
+:?*:->::→
+:?*:<-::←
