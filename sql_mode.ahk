@@ -23,7 +23,7 @@ sqlKeywords := [
 
 ; Function to create the purple GUI
 CreateSQLModeGUI() {
-    global sqlGui
+    global sqlGui, hoverTimer
     
     ; Create GUI with purple background
     sqlGui := Gui("+AlwaysOnTop +ToolWindow -Caption", "SQL Mode Active")
@@ -40,36 +40,29 @@ CreateSQLModeGUI() {
     statusText.SetFont("s10 Bold")
     statusText.OnEvent("Click", SQLModeEnd)
     sqlGui.OnEvent("Close", SQLModeEnd)
-    
-
 
     ; Show the GUI
     sqlGui.Show("x" . xPos . " y0 w" . guiWidth . " h" . guiHeight)
     
-    ; Start timer to check for mouse hover
-    global hoverTimer
+    ; Start hover timer
     hoverTimer := SetTimer(CheckMouseHover, 100)  ; Check every 100ms
 }
 
-; Function to check mouse position for hover effect
+; Check if mouse hovering the GUI
 CheckMouseHover() {
     global sqlGui
     static wasHovering := false
     if (!IsObject(sqlGui) || !sqlGui.Hwnd)
         return
-        
-    ; Check if mouse is over our GUI
     MouseGetPos(&mouseX, &mouseY, &winUnderMouse)    
     isHovering := (winUnderMouse = sqlGui.Hwnd)
-    
-    ; Only update if hover state changed
     if (isHovering != wasHovering) {
         OnHover(isHovering)
         wasHovering := isHovering
     }
 }
 
-; Function to handle hover effects
+; Perform GUI hover effect
 OnHover(isHovering) {
     global sqlGui
     if (isHovering) {
@@ -79,8 +72,7 @@ OnHover(isHovering) {
     }
 }
 
-
-; Create hotstrings for each SQL keyword
+; Actually perform string uppercasing
 CreateHotstrings() {
     global sqlKeywords
     for keyword in sqlKeywords {
@@ -88,31 +80,21 @@ CreateHotstrings() {
     }
 }
 
-
-; Function to close GUI and disable SQL mode
 SQLModeEnd(*) {
     global sqlGui
-    
-    ; Stop the hover timer
     SetTimer(CheckMouseHover, 0)
-        
     sqlGui.Destroy()
     for keyword in sqlKeywords {
         Hotstring("::" . keyword, keyword, 0)
     }
 }
 
-
 SQLModeStart() {
     CreateSQLModeGUI()
     CreateHotstrings()
 }
 
-; Optional: ESC key to quickly close (can be removed if not wanted)
-Esc::SQLModeEnd()
 
-; Hotkey to start SQL mode (Ctrl+Alt+S)
-^!s::SQLModeStart()
-
-; Testing - Start SQL mode on script launch
-SQLModeStart()
+Esc::SQLModeEnd()   ; ESC key to end
+^!s::SQLModeStart() ; Ctrl + Alt + S to start
+SQLModeStart()      ; Start on script launch too
