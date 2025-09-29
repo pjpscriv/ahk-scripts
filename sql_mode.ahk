@@ -10,7 +10,15 @@ sqlKeywords := [
     "union", "group", "order", "by", "having", "distinct", "as", "and", "or", "not",
     "null", "is", "like", "between", "in", "exists", "case", "when", "then", "else",
     "end", "count", "sum", "avg", "max", "min", "varchar", "int", "char", "text",
-    "primary", "key", "foreign", "references", "constraint", "unique", "default"
+    "primary", "key", "foreign", "references", "constraint", "unique", "default",
+
+    ; More BigQuery-specific keywords
+    "with", "bigquery", "bq", "partition", "clustering", "dataset", "project", "schema", "routine",
+    "procedure", "function", "materialized", "snapshot", "external", "dataflow", "ml",
+    "analytics", "geography", "json", "xml", "array", "struct", "timestamp", "datetime",
+    "time", "date", "float64", "int64", "numeric", "bignumeric", "bool", "bytes", "safe_cast",
+    "cast", "extract", "format", "parse", "current_date", "current_time", "current_timestamp",
+    "session_user", "system_user", "user"
 ]
 
 ; Function to create the purple GUI
