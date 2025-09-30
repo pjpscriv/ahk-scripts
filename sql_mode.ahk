@@ -11,6 +11,7 @@ sqlKeywords := [
     "null", "is", "like", "between", "in", "exists", "case", "when", "then", "else",
     "end", "count", "sum", "avg", "max", "min", "varchar", "int", "char", "text",
     "primary", "key", "foreign", "references", "constraint", "unique", "default",
+    "limit", 
 
     ; More BigQuery-specific keywords
     "with", "bigquery", "bq", "partition", "clustering", "dataset", "project", "schema", "routine",
