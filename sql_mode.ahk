@@ -4,6 +4,7 @@
 ; Converts SQL keywords to uppercase and shows a purple GUI indicator
 
 ; Initialize variables
+sqlModeEnabled := false
 sqlKeywords := [
     "select", "from", "where", "insert", "update", "delete", "create", "drop", "alter", 
     "table", "database", "index", "view", "join", "inner", "left", "right", "outer",
@@ -11,7 +12,8 @@ sqlKeywords := [
     "null", "is", "like", "between", "in", "exists", "case", "when", "then", "else",
     "end", "count", "sum", "avg", "max", "min", "varchar", "int", "char", "text",
     "primary", "key", "foreign", "references", "constraint", "unique", "default",
-    "limit", 
+    "limit", "on", "length", "substring", "upper", "lower", "trim", "replace", "round",
+    "desc", "asc", "cast", "convert", "coalesce", "ifnull", "nvl",
 
     ; More BigQuery-specific keywords
     "with", "bigquery", "bq", "partition", "clustering", "dataset", "project", "schema", "routine",
@@ -82,20 +84,31 @@ CreateHotstrings() {
 }
 
 SQLModeEnd(*) {
-    global sqlGui
+    global sqlGui, sqlModeEnabled
     SetTimer(CheckMouseHover, 0)
     sqlGui.Destroy()
     for keyword in sqlKeywords {
         Hotstring("::" . keyword, keyword, 0)
     }
+    sqlModeEnabled := false
 }
 
 SQLModeStart() {
+    global sqlModeEnabled
     CreateSQLModeGUI()
     CreateHotstrings()
+    sqlModeEnabled := true
+}
+
+SQLModeToggle() {
+    global sqlModeEnabled
+    if (sqlModeEnabled) {
+        SQLModeEnd()
+    } else {
+        SQLModeStart()
+    }
 }
 
 
-Esc::SQLModeEnd()   ; ESC key to end
-^!s::SQLModeStart() ; Ctrl + Alt + S to start
+^!s::SQLModeToggle() ; Ctrl + Alt + S to toggle SQL mode
 SQLModeStart()      ; Start on script launch too
