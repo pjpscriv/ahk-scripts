@@ -6,8 +6,8 @@
 ; Initialize variables
 sqlModeEnabled := false
 sqlKeywords := [
-    "select", "from", "where", "insert", "update", "delete", "create", "drop", "alter", 
-    "table", "database", "index", "view", "join", "inner", "left", "right", "outer",
+    "select", "from", "where", "insert", "into", "update", "delete", "create", "drop", "alter", 
+    "table", "database", "index", "view", "join", "inner", "left", "right", "outer", "using",
     "union", "group", "order", "by", "having", "distinct", "as", "and", "or", "not",
     "null", "is", "like", "between", "in", "exists", "case", "when", "then", "else",
     "end", "count", "sum", "avg", "max", "min", "varchar", "int", "char", "text",
