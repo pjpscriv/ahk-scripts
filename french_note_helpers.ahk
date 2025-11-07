@@ -2,27 +2,27 @@
 #SingleInstance Force
 
 ::verbstems:: {
-    SendText "| je ___ **ais**"
-    Sleep 100
+    SendText "| je _____ **ais**"
+    Sleep 200
     Send '+`n'
-    Sleep 100
-    SendText "tu ___ **as**"
-    Sleep 100
+    Sleep 200
+    SendText "tu _____ **as**"
+    Sleep 200
     Send '+`n'
-    Sleep 100
-    SendText "il/elle/on ___ **a**"
-    Sleep 100
+    Sleep 200
+    SendText "il/elle/on _____ **a**"
+    Sleep 200
     Send '+`n'
-    Sleep 100
-    SendText "nous ___ **ons**"
-    Sleep 100
+    Sleep 200
+    SendText "nous _____ **ons**"
+    Sleep 200
     Send '+`n'
-    Sleep 100
-    SendText "vous ___ **ez**"
-    Sleep 100
+    Sleep 200
+    SendText "vous _____ **ez**"
+    Sleep 200
     Send '+`n'
-    Sleep 100
-    SendText "ils/elles ___ **ant**"
+    Sleep 200
+    SendText "ils/elles _____ **ant**"
 }
 
 ; Common words
