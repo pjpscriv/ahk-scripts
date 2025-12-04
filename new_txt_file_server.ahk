@@ -14,7 +14,8 @@ IsItemInList(item, list, del:=",") {
 }
 
 ; Ctrl + Alt + N
-^!n:: {
+; $ → Prevents hotkey from triggering itself
+$^!n:: {
 
     ; Get active window
     activeWin := WinActive("A")
@@ -23,6 +24,7 @@ IsItemInList(item, list, del:=",") {
     ; If active window isn't File Explorer - exit
     explorerClasses := ["CabinetWClass", "ExploreWClass"]
     if !IsItemInList(activeClass, explorerClasses) {
+        Send "^!n"
         return
     }
 
