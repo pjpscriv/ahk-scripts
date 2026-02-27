@@ -61,6 +61,9 @@
 :?*:O|::Ō
 :?*:U|::Ū
 
+; Macron escaping
+!|::Send "{Raw}|"
+
 ; Cedille
 :?*:c`:::ç
 :?*:C`:::Ç
