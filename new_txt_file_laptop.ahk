@@ -32,7 +32,7 @@ $^!n:: {
     
     ; Move the mouse to the left side of the window
     WinGetPos(&winX, &winY, &winWidth, &winHeight)    
-    MouseMove (winWidth - 35), (winHeight // 2)
+    MouseMove (winWidth - 35), (winHeight / 1.5)
 
     ; Left click to clear any selection
     Send "{LButton}"
@@ -41,10 +41,17 @@ $^!n:: {
     Send "+{RButton}"
     Sleep 10
     
+    ; Press W - "Wiztree"
+    Send "w"
+    Sleep 10
+
     ; Press W - "New"
     Send "w"
     Sleep 10
     
+    Send "{Enter}"
+    Sleep 10
+
     ; Press T - "Text Document"
     Send "t"
 }
