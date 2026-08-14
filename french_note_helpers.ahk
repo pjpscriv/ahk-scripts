@@ -27,3 +27,5 @@
 
 ; Common words
 ::etre::être
+::etes::êtes
+::Etes::Êtes

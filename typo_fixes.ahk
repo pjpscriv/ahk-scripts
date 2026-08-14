@@ -3,3 +3,5 @@
 
 :*:seperate::separate
 :*:recieve::receive
+:*:convertion::conversion
+:*:clera::clear
