@@ -29,3 +29,4 @@
 ::etre::être
 ::etes::êtes
 ::Etes::Êtes
+::aout::août
