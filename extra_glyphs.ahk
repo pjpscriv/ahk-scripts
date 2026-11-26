@@ -78,6 +78,9 @@
 :?*:ae)::æ
 :?*:AE)::Æ
 
+; Point médian (e.g. Développeur·se)
+:?*:.^::·
+
 ; Quote marks - Guillemets
 :?*:<<::«
 :?*:>>::»
